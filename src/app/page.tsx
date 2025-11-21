@@ -1,10 +1,19 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Download, ExternalLink, ArrowRight } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  ExternalLink,
+  ArrowRight,
+} from "lucide-react";
 
 const skills = {
   "Program & Project Management": [
@@ -127,7 +136,7 @@ const projects = [
     title: "AI-Driven Support Agent for Payments Platform",
     context: "Fidelity Information Services",
     details:
-      "Led Delivery for  an AI support agent for FIS payment systems, handling L1 queries, knowledge lookup, and troubleshooting guidance.",
+      "Led delivery for an AI support agent for FIS payment systems, handling L1 queries, knowledge lookup, and troubleshooting guidance.",
     impact: [
       "Reduced support costs by 20% and improved CSAT by 10%.",
       "Shortened average response times and enabled 24x7 self-service support.",
@@ -231,7 +240,9 @@ const scrollToSection = (id: string) => {
 const SectionTitle: React.FC<{ title: string; eyebrow?: string }> = ({ title, eyebrow }) => (
   <div className="mb-6">
     {eyebrow && (
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-400">{eyebrow}</p>
+      <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
+        {eyebrow}
+      </p>
     )}
     <h2 className="mt-1 text-2xl font-semibold tracking-tight text-slate-50">
       {title}
@@ -256,16 +267,27 @@ const AnandITPMPortfolio: React.FC = () => {
       </div>
 
       {/* Layout */}
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-6 md:flex-row md:px-8 md:py-10">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-8 md:flex-row md:px-8">
         {/* Left sidebar / hero */}
         <motion.aside
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="md:sticky md:top-6 md:h-[calc(100vh-3rem)] md:w-72"
+          className="md:sticky md:top-6 md:h-[calc(100vh-3rem)] md:w-80"
         >
-          <Card className="border-slate-800/80 bg-slate-950/80 shadow-xl shadow-black/40 backdrop-blur">
-            <CardHeader className="pb-4">
+          <Card className="border-slate-800/80 bg-gradient-to-b from-slate-950/95 to-slate-900/80 shadow-2xl shadow-black/60 backdrop-blur">
+            <CardHeader className="pb-4 flex flex-col items-center text-center md:items-start md:text-left">
+              {/* Profile photo - square, larger, glow */}
+              <div className="relative mb-4 h-36 w-36 overflow-hidden rounded-2xl border border-slate-600 bg-slate-900 ring-2 ring-indigo-500/70 shadow-[0_0_30px_rgba(129,140,248,0.7)]">
+                <Image
+                  src="/Anand_Pic.png"
+                  alt="Anand portrait"
+                  fill
+                  sizes="144px"
+                  className="object-cover"
+                />
+              </div>
+
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-400">
                 IT Project & Program Manager
               </p>
@@ -276,6 +298,7 @@ const AnandITPMPortfolio: React.FC = () => {
                 </span>
               </CardTitle>
             </CardHeader>
+
             <CardContent className="space-y-5 text-sm text-slate-200">
               <p className="text-sm text-slate-300">
                 Delivering large-scale digital transformation across Banking, Healthcare, and Financial Services.
@@ -313,7 +336,7 @@ const AnandITPMPortfolio: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-1">
+              <div className="flex flex-wrap justify-center gap-2 pt-1 md:justify-start">
                 <Badge className="border-0 bg-indigo-600/90 text-xs text-slate-50">
                   Digital Transformation
                 </Badge>
@@ -374,7 +397,7 @@ const AnandITPMPortfolio: React.FC = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex-1 space-y-10 pb-10"
+          className="flex-1 space-y-12 pb-10"
         >
           {/* About */}
           <section id="about" className="scroll-mt-24">
@@ -406,7 +429,7 @@ const AnandITPMPortfolio: React.FC = () => {
               {experience.map((job) => (
                 <Card
                   key={job.company + job.period}
-                  className="border-slate-800/80 bg-slate-950/70 shadow-lg shadow-black/40"
+                  className="border-slate-800/80 bg-gradient-to-b from-slate-950/95 to-slate-900/80 shadow-lg shadow-black/40"
                 >
                   <CardHeader className="pb-3">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -425,7 +448,7 @@ const AnandITPMPortfolio: React.FC = () => {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0 text-sm text-slate-200">
-                    <ul className="list-disc space-y-1 pl-5">
+                    <ul className="list-disc space-y-1 pl-5 text-slate-300">
                       {job.highlights.map((h) => (
                         <li key={h}>{h}</li>
                       ))}
@@ -443,7 +466,7 @@ const AnandITPMPortfolio: React.FC = () => {
               {Object.entries(skills).map(([group, items]) => (
                 <Card
                   key={group}
-                  className="border-slate-800/80 bg-slate-950/70 shadow-lg shadow-black/40"
+                  className="border-slate-800/80 bg-gradient-to-b from-slate-950/95 to-slate-900/80 shadow-lg shadow-black/40"
                 >
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-semibold text-slate-50">{group}</CardTitle>
@@ -461,7 +484,7 @@ const AnandITPMPortfolio: React.FC = () => {
               <h3 className="text-sm font-semibold text-slate-200">Tools & Platforms</h3>
               <div className="grid gap-3 md:grid-cols-2">
                 {Object.entries(tools).map(([group, items]) => (
-                  <div key={group} className="rounded-xl border border-slate-800 bg-slate-950/70 p-3 text-xs">
+                  <div key={group} className="rounded-xl border border-slate-800 bg-slate-950/80 p-3 text-xs shadow-md shadow-black/40">
                     <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                       {group}
                     </p>
@@ -488,7 +511,7 @@ const AnandITPMPortfolio: React.FC = () => {
               {projects.map((project) => (
                 <Card
                   key={project.title}
-                  className="flex flex-col border-slate-800/80 bg-slate-950/70 shadow-lg shadow-black/40"
+                  className="flex flex-col border-slate-800/80 bg-gradient-to-b from-slate-950/95 to-slate-900/80 shadow-lg shadow-black/40"
                 >
                   <CardHeader className="pb-3">
                     <CardTitle className="text-base font-semibold text-slate-50">
@@ -526,7 +549,7 @@ const AnandITPMPortfolio: React.FC = () => {
               {aiPortfolio.map((item) => (
                 <Card
                   key={item.title}
-                  className="border-slate-800/80 bg-slate-950/70 shadow-lg shadow-black/40"
+                  className="border-slate-800/80 bg-gradient-to-b from-slate-950/95 to-slate-900/80 shadow-lg shadow-black/40"
                 >
                   <CardHeader className="pb-3">
                     <CardTitle className="text-base font-semibold text-slate-50">
@@ -567,7 +590,7 @@ const AnandITPMPortfolio: React.FC = () => {
                 This chatbot is built as a Hugging Face Space and is connected to my real experience, skills, and
                 preferences. Recruiters and stakeholders can interact with it to explore my profile in a conversational way.
               </p>
-              <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 shadow-lg shadow-black/40">
+              <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 shadow-lg shadow-black/50">
                 <iframe
                   src="https://anandbala-anands-ai-career-agent.hf.space"
                   title="Anand's AI Career Agent"
@@ -582,7 +605,7 @@ const AnandITPMPortfolio: React.FC = () => {
           <section id="education" className="scroll-mt-24">
             <SectionTitle eyebrow="Profile" title="Education & Certifications" />
             <div className="grid gap-4 md:grid-cols-2">
-              <Card className="border-slate-800/80 bg-slate-950/70 shadow-lg shadow-black/40">
+              <Card className="border-slate-800/80 bg-slate-950/80 shadow-lg shadow-black/40">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-sm font-semibold text-slate-50">Education</CardTitle>
                 </CardHeader>
@@ -597,7 +620,7 @@ const AnandITPMPortfolio: React.FC = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-slate-800/80 bg-slate-950/70 shadow-lg shadow-black/40">
+              <Card className="border-slate-800/80 bg-slate-950/80 shadow-lg shadow-black/40">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-sm font-semibold text-slate-50">Certifications & Awards</CardTitle>
                 </CardHeader>
