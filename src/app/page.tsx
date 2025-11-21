@@ -127,7 +127,7 @@ const projects = [
     title: "AI-Driven Support Agent for Payments Platform",
     context: "Fidelity Information Services",
     details:
-      "Designed and implemented an AI support agent for FIS payment systems, handling L1 queries, knowledge lookup, and troubleshooting guidance.",
+      "Led Delivery for  an AI support agent for FIS payment systems, handling L1 queries, knowledge lookup, and troubleshooting guidance.",
     impact: [
       "Reduced support costs by 20% and improved CSAT by 10%.",
       "Shortened average response times and enabled 24x7 self-service support.",
@@ -174,7 +174,7 @@ const aiPortfolio = [
     title: "Anand's AI Career Agent",
     description:
       "Personal AI chatbot that answers queries about my skills, project experience, education, job preferences, and personal details.",
-    link: "https://huggingface.co/spaces/ANANDBALA/Anands_AI_Career_Agent",
+    link: "https://anandbala-anands-ai-career-agent.hf.space",
     outcomes: [
       "Showcases my hands-on experience with LLM integration and prompt design.",
       "Acts as a living, interactive portfolio for recruiters and stakeholders.",
@@ -569,7 +569,7 @@ const AnandITPMPortfolio: React.FC = () => {
               </p>
               <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 shadow-lg shadow-black/40">
                 <iframe
-                  src="https://huggingface.co/spaces/ANANDBALA/Anands_AI_Career_Agent"
+                  src="https://anandbala-anands-ai-career-agent.hf.space"
                   title="Anand's AI Career Agent"
                   loading="lazy"
                   className="h-[600px] w-full"
